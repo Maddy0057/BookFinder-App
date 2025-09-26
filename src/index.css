@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 15 23% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 15 23% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 15 23% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 15 23% 4%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 186 100% 50%;
+    --accent-foreground: 15 23% 4%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* BookFinder specific colors */
+    --cyan-primary: 186 100% 50%;
+    --teal-primary: 160 84% 39%;
+    --purple-primary: 258 90% 66%;
+    --slate-900: 222 84% 5%;
+    --slate-800: 215 28% 17%;
+    --slate-700: 215 20% 25%;
+    --slate-600: 215 16% 35%;
+    --slate-500: 215 14% 46%;
+    --slate-400: 215 20% 65%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--cyan-primary)), hsl(var(--teal-primary)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--cyan-primary)), hsl(var(--purple-primary)));
+    --gradient-bg: linear-gradient(135deg, hsl(var(--slate-900)) 0%, hsl(222 84% 4%) 50%, hsl(var(--slate-900)) 100%);
+    
+    /* Shadows */
+    --shadow-glow-cyan: 0 0 40px hsl(var(--cyan-primary) / 0.3);
+    --shadow-glow-purple: 0 0 40px hsl(var(--purple-primary) / 0.2);
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    
+    /* Glass effect */
+    --glass-bg: rgba(17, 25, 40, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.125);
+  }
+
+  .dark {
+    --background: 15 23% 4%;
+    --foreground: 210 40% 98%;
+    --card: 15 23% 4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 15 23% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 15 23% 4%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 186 100% 50%;
+    --accent-foreground: 15 23% 4%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 186 100% 50%;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .gradient-border {
+    background: var(--gradient-secondary);
+    padding: 2px;
+    border-radius: calc(var(--radius) + 2px);
+  }
+  
+  .gradient-border-inner {
+    background: hsl(var(--background));
+    border-radius: var(--radius);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, hsl(var(--slate-800)) 0%, hsl(var(--slate-700)) 50%, hsl(var(--slate-800)) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

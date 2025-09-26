@@ -1,10 +1,6 @@
+# BookFinder-App
+LINK : https://bookfinderapp257.netlify.app/
 
-# BookFinder-App
-<<<<<<< HEAD
-=======
-=======
-# BookFinder-App
->>>>>>> c52fd59 (Removed Lovable branding and updated assets)
 
 ## Project Walkthrough
 

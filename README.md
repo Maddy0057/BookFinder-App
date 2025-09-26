@@ -1,77 +1,100 @@
 <<<<<<< HEAD
 # BookFinder-App
 =======
-# Welcome to your Lovable project
+# BookFinder-App
 
-## Project info
+## Project Walkthrough
 
-**URL**: https://lovable.dev/projects/541de182-f625-4ed9-a89a-a9a90f12faf1
+BookFinder-App is a modern React application for searching and exploring books. It uses Vite for fast development, TypeScript for type safety, shadcn-ui for UI components, and Tailwind CSS for styling.
 
-## How can I edit this code?
+### Getting Started
 
-There are several ways of editing your application.
+**Prerequisites:**
+- Node.js & npm ([Download Node.js](https://nodejs.org/))
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/541de182-f625-4ed9-a89a-a9a90f12faf1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+**Setup:**
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd ignite-react-code-main
+npm install
 npm run dev
 ```
+Visit [http://localhost:8080](http://localhost:8080) to view the app.
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure & Components
 
-**Use GitHub Codespaces**
+### Main Files
+- `src/App.tsx`: Main app component, sets up routing and layout.
+- `src/main.tsx`: Entry point, renders the app.
+- `src/index.css`: Global styles (Tailwind CSS).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### BookFinder Components (`src/components/BookFinder/`)
+- `BookFinder.tsx`: Main container for the book search experience. Handles search logic and API integration.
+- `SearchBar.tsx`: Input for searching books by title, author, etc.
+- `BookList.tsx`: Displays a list of book results from the API.
+- `BookCard.tsx`: Shows summary info for each book in the list.
+- `BookDetail.tsx`: Shows detailed info for a selected book.
+- `WelcomeMessage.tsx`: Initial welcome screen.
+- `ErrorMessage.tsx`: Displays errors (e.g., API/network issues).
+- `LoaderSkeleton.tsx`: Loading skeleton for async states.
+- `Header.tsx` & `Footer.tsx`: App header and footer.
+- `types.ts`: TypeScript types for book data and API responses.
 
-## What technologies are used for this project?
+### UI Components (`src/components/ui/`)
+Reusable UI elements (accordion, button, card, dialog, toast, etc.) built with shadcn-ui and styled with Tailwind CSS.
 
-This project is built with:
+### Hooks (`src/hooks/`)
+- `use-mobile.tsx`: Detects mobile device usage.
+- `use-toast.ts`: Toast notification logic.
 
+### Utilities (`src/lib/utils.ts`)
+Helper functions for formatting, data manipulation, etc.
+
+### Pages (`src/pages/`)
+- `Index.tsx`: Home page.
+- `NotFound.tsx`: 404 page.
+
+---
+
+## API Integration
+
+BookFinder integrates with a book data API (such as Google Books API or Open Library API). The main logic for fetching and displaying book data is in:
+- `BookFinder.tsx`: Handles search queries and API requests.
+- `BookList.tsx` & `BookCard.tsx`: Render results from API responses.
+- `BookDetail.tsx`: Fetches and displays detailed info for a selected book.
+- `types.ts`: Defines the structure of API data.
+
+API calls are typically made using `fetch` or `axios` inside React hooks (`useEffect`, etc.), with error handling and loading states managed by `ErrorMessage.tsx` and `LoaderSkeleton.tsx`.
+
+---
+
+## Customization & Extending
+
+- Add new UI components in `src/components/ui/`.
+- Extend book data types in `src/components/BookFinder/types.ts`.
+- Integrate additional APIs by updating fetch logic in `BookFinder.tsx`.
+
+---
+
+## Deployment
+
+To deploy, build the app with:
+```sh
+npm run build
+```
+Then serve the `dist/` folder using your preferred static hosting (Vercel, Netlify, GitHub Pages, etc.).
+
+---
+
+## Technologies Used
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/541de182-f625-4ed9-a89a-a9a90f12faf1) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+Feel free to explore the codebase, customize components, and integrate new features!
 >>>>>>> e57a509 (Your commit message)

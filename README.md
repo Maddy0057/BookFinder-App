@@ -1,5 +1,10 @@
 
 # BookFinder-App
+<<<<<<< HEAD
+=======
+=======
+# BookFinder-App
+>>>>>>> c52fd59 (Removed Lovable branding and updated assets)
 
 ## Project Walkthrough
 

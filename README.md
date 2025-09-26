@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# BookFinder-App
-=======
+
 # BookFinder-App
 
 ## Project Walkthrough
